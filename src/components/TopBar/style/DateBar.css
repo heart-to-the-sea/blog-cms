@@ -1,0 +1,8 @@
+#date {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 190px;
+  margin: auto;
+  z-index: 3;
+}

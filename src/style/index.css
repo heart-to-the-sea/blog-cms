@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../../public/img/back.jpg");
+  background-size: 100vw 100vh;
+  background-repeat: no-repeat;
+}
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+.svgfont {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  vertical-align: -0.1em;
+  font-size: 16px;
+}
