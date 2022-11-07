@@ -5,18 +5,60 @@
   color: #fff;
 }
 .workspace .workspace-container {
-  width: 80%;
   height: 80%;
   position: fixed;
   top: 0;
   bottom: 0;
-  left: 0;
+  left: 10%;
   right: 0;
   margin: auto;
   transition: width 0.3s, height 0.3s;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: nowrap;
 }
 .workspace .workspace-container .workspace-node {
-  width: 100%;
+  flex: none;
+  width: 80vw;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.267);
+  background-color: rgba(0, 0, 0, 0.052);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 100;
+}
+.workspace .workspace-container .workspace-node .container {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-size: 100%;
+  width: 90%;
+  height: 80vh;
+  border-radius: 15px;
+  background-color: rgba(0, 0, 0, 0.287);
+  transition: all 0.1s;
+}
+.workspace .workspace-container .workspace-node-active {
+  z-index: 999;
+}
+.workspace .workspace-container .workspace-node-active .container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 100vw;
+  height: 100vh;
+  border-radius: 15px;
+  background-color: rgba(0, 0, 0, 0.705);
+  transition: all 0.3s;
+}
+.workspace .workspace-container-active {
+  height: 100%;
 }

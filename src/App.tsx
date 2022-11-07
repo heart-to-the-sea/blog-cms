@@ -11,12 +11,18 @@ function App() {
   useIcons();
   const dispatch = useAppDispatch();
   useEffect(() => {
-    window.addEventListener("keydown", (e: KeyboardEvent) => {
-      if (e.altKey) {
-        console.log("keydown");
-        dispatch(toggleAlfFlag());
-      }
-    });
+    let time
+    clearTimeout(time)
+    time = setTimeout(()=>{
+      console.log('time')
+      window.onkeydown=(e: KeyboardEvent) => {
+        if (e.altKey) {
+          console.log("keydown123",e.altKey);
+          dispatch(toggleAlfFlag());
+          return false;
+        }
+      };
+    })
   }, []);
   return (
     <div className="base-desktop">

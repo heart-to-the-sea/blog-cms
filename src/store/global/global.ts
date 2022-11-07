@@ -4,7 +4,7 @@ interface InitialState {
   altFlag: number
 }
 const initialState: InitialState = {
-  altFlag: 1
+  altFlag: 0
 }
 const counterSlice = createSlice({
   name: "global",
