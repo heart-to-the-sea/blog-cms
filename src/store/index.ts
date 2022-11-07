@@ -1,11 +1,15 @@
-import { Action, configureStore, ThunkAction } from '@reduxjs/toolkit'
-import globalSlice from './globalSlice'
+import { configureStore } from '@reduxjs/toolkit'
+import global from './global/global'
 
 const store = configureStore({
   reducer: {
-    globals:globalSlice
+    global: global
   }
 })
 
+// state类型
 export type RootState = ReturnType<typeof store.getState>
-export type AppThunk<ReturnType = void>=ThunkAction<ReturnType,RootState,unknown,Action<string>>
+// 操作
+export type AppDispatch = typeof store.dispatch
+
+export default store

@@ -73,7 +73,7 @@
   left: -77.5px;
 }
 #list-center #list .node:active {
-  border: 1px solid #ffffff;
+  border: 2px solid #ffffff;
 }
 #list-center #list .node-more {
   padding: 0;
