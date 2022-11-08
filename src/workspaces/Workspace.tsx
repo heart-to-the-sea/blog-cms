@@ -14,7 +14,7 @@ export default function Workspace() {
     workspaceIndex,
     setWorkspaceIndex
   );
-  const {} = useAltKeyWorkspace(
+  useAltKeyWorkspace(
     altFlag,
     workspaceContainer,
     workspaceIndex,

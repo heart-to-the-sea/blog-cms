@@ -22,6 +22,8 @@ export default function useHandleWheel(
   let left = 0;
   let index = workspaceIndex;
   const handleLeft = (e: WheelEvent) => {
+    if(!e.altKey&&altFlag) return
+    if(altFlag) return
     const workspaces = workspaceContainer.current?.children as unknown as HTMLDivElement[];
     if (!workspaces?.length || !workspaceContainer.current) return;
 
