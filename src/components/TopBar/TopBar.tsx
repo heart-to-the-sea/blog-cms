@@ -4,6 +4,7 @@ import PerformanceBar  from "./components/PerformanceBar";
 import DateBar from "./components/DateBar";
 import { useAppSelector } from "../../utils/hooks";
 import WorkBar from "./components/WorkBar";
+import WeComeBar from "./components/WeComeBar";
 export default function TopBar() {
 
   const altFlag = useAppSelector((state) => state.global.altFlag);
@@ -14,6 +15,7 @@ export default function TopBar() {
       {/* <PerformanceBar /> */}
       <DateBar />
       <WorkBar />
+      <WeComeBar />
     </div>
   );
 }

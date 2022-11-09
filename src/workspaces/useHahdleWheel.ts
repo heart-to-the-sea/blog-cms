@@ -1,4 +1,6 @@
 import { Dispatch, RefObject, SetStateAction, useEffect, useState } from "react";
+import { setWorkspaceLength } from "../store/global/global";
+import { useAppDispatch } from "../utils/hooks";
 
 export default function useHandleWheel(
   altFlag: number,
@@ -7,6 +9,7 @@ export default function useHandleWheel(
   setWorkspaceIndex: Dispatch<SetStateAction<number>>
 ) {
   const [style, setStyle] = useState({ height: "" });
+  const dispatch = useAppDispatch()
   useEffect(() => {
     console.log(altFlag);
     if (altFlag) {
@@ -26,21 +29,20 @@ export default function useHandleWheel(
     if(altFlag) return
     const workspaces = workspaceContainer.current?.children as unknown as HTMLDivElement[];
     if (!workspaces?.length || !workspaceContainer.current) return;
-
+    dispatch(setWorkspaceLength(workspaces?.length || 0))
     if (e.deltaY > 0) {
       index++;
     } else {
       index--;
     }
-    if (index >= 9) {
-      index = 9 - 1;
+    if (index >= workspaces?.length) {
+      index = workspaces?.length - 1;
     }
     if (index < 0) {
       index = 0;
     }
     console.log(index)
     setWorkspaceIndex(index);
-    console.log(workspaces[index].offsetLeft);
     left = -(workspaces[index].offsetLeft - window.innerWidth * 0.1);
     workspaceContainer.current.style.left = left + "px";
   };
