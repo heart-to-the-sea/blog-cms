@@ -3,6 +3,7 @@ import "./style/index.less";
 import PerformanceBar  from "./components/PerformanceBar";
 import DateBar from "./components/DateBar";
 import { useAppSelector } from "../../utils/hooks";
+import WorkBar from "./components/WorkBar";
 export default function TopBar() {
 
   const altFlag = useAppSelector((state) => state.global.altFlag);
@@ -10,8 +11,9 @@ export default function TopBar() {
   },[])
   return (
     <div id="top" style={{top: altFlag ? '': '-50px'}}>
-      <PerformanceBar />
+      {/* <PerformanceBar /> */}
       <DateBar />
+      <WorkBar />
     </div>
   );
 }

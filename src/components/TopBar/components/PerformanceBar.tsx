@@ -55,7 +55,7 @@ export default function PerformanceBar() {
     if (!chart) chart = charts.init(performanceDom.current);
     const arr: number[] = [];
     setInterval(() => {
-      if (arr.length >= 50000) {
+      if (arr.length >= 10000) {
         arr.splice(0, 1);
       }
       arr.push(

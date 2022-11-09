@@ -1,7 +1,7 @@
 #top {
   position: fixed;
   border-radius: 15px;
-  top: 5px;
+  top: 10px;
   left: 15px;
   right: 15px;
   height: 30px;
@@ -33,4 +33,26 @@
   width: 215px;
   margin: auto;
   z-index: 3;
+}
+#top #work-bar {
+  right: 10px;
+  height: 100%;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: end;
+  z-index: 2;
+}
+#top #work-bar .work-node {
+  margin: 0 3px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  cursor: pointer;
+  box-shadow: 0 0 5px #ccff;
+}
+#top #work-bar .work-node-active {
+  background-color: #fff;
+  position: absolute;
 }

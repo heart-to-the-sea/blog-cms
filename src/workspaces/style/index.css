@@ -37,12 +37,11 @@
   left: 0;
   bottom: 0;
   right: 0;
-  background-image: url("../../../public/img/back.jpg");
   background-size: 100%;
   width: 90%;
   height: 80vh;
   border-radius: 15px;
-  background-color: rgba(0, 0, 0, 0.287);
+  background-color: #71399299;
   transition: all 0.1s;
 }
 .workspace .workspace-container .workspace-node-active {
@@ -52,14 +51,15 @@
   position: fixed;
   top: 0;
   left: 0;
-  bottom: 0;
   right: 0;
+  bottom: 0;
   margin: auto;
   width: 100vw;
   height: 100vh;
   border-radius: 15px;
-  background-color: rgba(0, 0, 0, 0.705);
   transition: all 0.3s;
+  border-radius: 0;
+  background-color: #713992;
 }
 .workspace .workspace-container-active {
   height: 100%;

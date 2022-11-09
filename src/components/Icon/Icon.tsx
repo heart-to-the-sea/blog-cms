@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Svg from "../../assets/icons/index.svg";
 interface Props {
   name: string;
   style: Object;

@@ -11,7 +11,7 @@ export default function Navbar() {
     console.log('1312313')
   };
   return (
-    <div id="list-center" style={{bottom: alfFlag ? '' : '-50px'}}>
+    <div id="list-center" style={{bottom: !alfFlag ? '' : '-50px'}}>
       <div id="list">
         <div className="node">
           <div className="before">123123</div>

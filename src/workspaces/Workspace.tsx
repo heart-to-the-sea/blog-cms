@@ -1,25 +1,30 @@
 import { useEffect, useRef, useState } from "react";
-import { useAppSelector } from "../utils/hooks";
+import { setWorkspaceIndex } from "../store/global/global";
+import { useAppDispatch, useAppSelector } from "../utils/hooks";
 import "./style/index.less";
 import useAltKeyWorkspace from "./useAltKeyWorkspace";
 import useHandleWheel from "./useHahdleWheel";
 export default function Workspace() {
   const altFlag = useAppSelector((state) => state.global.altFlag);
-  const [workspaceIndex, setWorkspaceIndex] = useState(0);
+  const dispatch = useAppDispatch()
+  const [workspaceIndex, setStateWorkspaceIndex] = useState(0);
   const workspaceContainer = useRef<HTMLDivElement>(null);
 
   const { style } = useHandleWheel(
     altFlag,
     workspaceContainer,
     workspaceIndex,
-    setWorkspaceIndex
+    setStateWorkspaceIndex
   );
   useAltKeyWorkspace(
     altFlag,
     workspaceContainer,
     workspaceIndex,
-    setWorkspaceIndex
+    setStateWorkspaceIndex
   );
+  useEffect(()=>{
+    dispatch(setWorkspaceIndex(workspaceIndex))
+  },[workspaceIndex])
   return (
     <div className="workspace">
       <div
