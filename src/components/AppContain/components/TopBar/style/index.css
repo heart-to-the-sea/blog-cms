@@ -1,0 +1,18 @@
+.app-right-top-bar {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+}
+.app-right-top-bar div {
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.app-right-top-bar .app-close {
+  background-color: #ff0000;
+}

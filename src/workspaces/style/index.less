@@ -3,7 +3,7 @@
   height: 100%;
   padding-top: 30px;
   color: #fff;
-  .workspace-container{
+  .workspace-container {
     height: 80%;
     position: fixed;
     top: 0;
@@ -27,7 +27,7 @@
       align-items: center;
       position: relative;
       z-index: 100;
-      .container{
+      .container {
         position: absolute;
         overflow: hidden;
         margin: auto;
@@ -41,8 +41,25 @@
         width: 90%;
         height: 80vh;
         border-radius: 15px;
-        background-color: #71399299;
+        background-color: #71399200;
         transition: all 0.1s;
+        overflow-y: auto;
+        .desktop {
+          width: 72vw !important;
+          overflow-y: auto;
+          // display: flex;
+          // flex-wrap: wrap;
+          // justify-content: space-between;
+          .app-contain {
+            flex: 1;
+            position: inherit !important;
+            float: left;
+            margin: 15px;
+            left: 0;
+            width: 200px;
+            height: 160px;
+          }
+        }
       }
     }
     .workspace-node-active {
@@ -53,7 +70,7 @@
       // height: 100vh;
       overflow: hidden;
       z-index: 999;
-      .container{
+      .container {
         position: fixed;
         top: 0;
         left: 0;
@@ -62,12 +79,11 @@
         margin: auto;
         width: 100vw;
         height: 100vh;
-        padding-top: 40px;
         overflow: hidden;
         border-radius: 15px;
         transition: all 0.3s;
         border-radius: 0;
-        background-color: #713992;
+        background-color: #71399200;
         iframe {
           width: 100%;
           height: 100%;

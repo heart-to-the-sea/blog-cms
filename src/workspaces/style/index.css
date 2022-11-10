@@ -44,8 +44,22 @@
   width: 90%;
   height: 80vh;
   border-radius: 15px;
-  background-color: #71399299;
+  background-color: #71399200;
   transition: all 0.1s;
+  overflow-y: auto;
+}
+.workspace .workspace-container .workspace-node .container .desktop {
+  width: 72vw !important;
+  overflow-y: auto;
+}
+.workspace .workspace-container .workspace-node .container .desktop .app-contain {
+  flex: 1;
+  position: inherit !important;
+  float: left;
+  margin: 15px;
+  left: 0;
+  width: 200px;
+  height: 160px;
 }
 .workspace .workspace-container .workspace-node-active {
   overflow: hidden;
@@ -60,12 +74,11 @@
   margin: auto;
   width: 100vw;
   height: 100vh;
-  padding-top: 40px;
   overflow: hidden;
   border-radius: 15px;
   transition: all 0.3s;
   border-radius: 0;
-  background-color: #713992;
+  background-color: #71399200;
 }
 .workspace .workspace-container .workspace-node-active .container iframe {
   width: 100%;

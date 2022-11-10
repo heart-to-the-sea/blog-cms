@@ -33,6 +33,8 @@ function App() {
       <TopBar />
       <Workspace>
         <WeComeDesktop/>
+        <WeComeDesktop/>
+        <WeComeDesktop/>
       </Workspace>
       <Navbar />
     </div>

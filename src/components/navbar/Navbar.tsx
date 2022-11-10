@@ -2,8 +2,10 @@ import { useAppDispatch, useAppSelector } from "../../utils/hooks";
 import Icon from "../Icon/Icon";
 import IconMap from "../Icon/IconsMap";
 import "./style/index.less";
-import { trueAlfFlag, falseAltFlag } from "../../store/global/global";
-
+/**
+ * 操作时配合qiankun实现在指定的workspace中动态创建dom元素，进行元素创建
+ * @returns 
+ */
 export default function Navbar() {
   const alfFlag = useAppSelector((state) => state.global.altFlag);
   const dispatch = useAppDispatch();
