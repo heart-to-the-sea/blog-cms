@@ -13,6 +13,12 @@
   border-radius: 50%;
   cursor: pointer;
 }
+.app-right-top-bar .app-small {
+  background-color: #faf731;
+}
+.app-right-top-bar .app-big {
+  background-color: #5ce01f;
+}
 .app-right-top-bar .app-close {
   background-color: #ff0000;
 }

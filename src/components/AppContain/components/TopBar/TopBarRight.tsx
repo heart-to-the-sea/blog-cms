@@ -1,19 +1,21 @@
-import { ReactNode, RefObject } from "react"
+import { toggleBigById, removeById } from '../../../../store/container/container'
+import { useAppDispatch } from '../../../../utils/hooks'
 import './style/index.less'
-import { unmountComponentAtNode } from "react-dom"
 interface Props{
-  parent:RefObject<Element>
+  id?: string|number
 }
 export default function TopBarRight(props:Props){
+  const dispatch = useAppDispatch()
   const handleClose = () => {
-    if (props.parent.current) {
-      unmountComponentAtNode(props.parent.current)
-    }
+    dispatch(removeById(props.id))
+  }
+  const handleBig = () => {
+    dispatch(toggleBigById(props.id))
   }
 
   return<div className="app-right-top-bar">
-    <div></div>
-    <div></div>
+    <div className='app-small'></div>
+    <div className='app-big' onClick={handleBig}></div>
     <div className="app-close" onClick={handleClose}></div>
   </div>
 }

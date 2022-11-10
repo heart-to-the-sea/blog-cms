@@ -25,10 +25,7 @@ export default function Workspace(props: Props) {
   return (
     <div className="workspace">
       <div className="workspace-container" style={style} ref={workspaceContainer}>
-        {
-          // 默认为9个窗口页面
-          props.children
-        }
+        {props.children}
       </div>
     </div>
   );

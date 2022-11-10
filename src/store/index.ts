@@ -1,9 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit'
 import global from './global/global'
-
+import container from './container/container'
 const store = configureStore({
   reducer: {
-    global: global
+    global: global,
+    container
   }
 })
 

@@ -1,6 +1,5 @@
 import { MouseEventHandler, useEffect, useRef } from "react";
-import { setWorkspaceIndex } from "../../../store/global/global";
-import { useAppDispatch, useAppSelector } from "../../../utils/hooks";
+import { useAppSelector } from "../../../utils/hooks";
 
 const generatorBar = (length: number, call: (index: number) => MouseEventHandler<HTMLDivElement>) => {
   const arr = [];
@@ -14,20 +13,17 @@ export default function WorkBar() {
   const workspaceIndex = useAppSelector((state) => state.global.workspaceIndex);
   const workspaceLength = useAppSelector((state) => state.global.workspaceLength);
   const activeNode = useRef<HTMLDivElement>(null);
-  const dispatch = useAppDispatch();
   const workBar = useRef<HTMLDivElement>(null);
   useEffect(() => {
     if (!activeNode.current) return;
     const children = workBar.current?.children as unknown as HTMLDivElement[];
     if (children && workspaceIndex >= children.length) return;
     const left = children[workspaceIndex].offsetLeft
-    // children[workspaceIndex].ap
     activeNode.current.style.left = `${left-3}px`
   }, [workspaceIndex]);
   const handleClick = (index: number) => {
     return (e: any) => {
       console.log(index);
-      // dispatch(setWorkspaceIndex(index));
     };
   };
   return (
