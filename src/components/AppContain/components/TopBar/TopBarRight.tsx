@@ -2,15 +2,16 @@ import { toggleBigById, removeById } from '../../../../store/container/container
 import { useAppDispatch } from '../../../../utils/hooks'
 import './style/index.less'
 interface Props{
+  workspace?: string|number
   id?: string|number
 }
 export default function TopBarRight(props:Props){
   const dispatch = useAppDispatch()
   const handleClose = () => {
-    dispatch(removeById(props.id))
+    dispatch(removeById(props))
   }
   const handleBig = () => {
-    dispatch(toggleBigById(props.id))
+    dispatch(toggleBigById(props))
   }
 
   return<div className="app-right-top-bar">
