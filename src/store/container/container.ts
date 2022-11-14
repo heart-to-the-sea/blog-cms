@@ -2,13 +2,13 @@ import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "..";
 export interface IAppContainer {
   // 工作区
-  workspace: string;
+  workspace: string | number;
   // 是否最大化
   big: 0 | 1;
   // 唯一标识
   id: string | number;
-  width: string;
-  height: string;
+  width?: string;
+  height?: string;
   zIndex: 1;
 }
 interface InitialState {
@@ -52,11 +52,11 @@ const counterSlice = createSlice({
       );
       if (obj) {
         obj.big = prop.payload.big;
-        obj.height = prop.payload.height
-        obj.id = prop.payload.id
-        obj.width =prop.payload.width
-        obj.workspace =prop.payload.workspace
-        obj.zIndex =prop.payload.zIndex
+        obj.height = prop.payload.height;
+        obj.id = prop.payload.id;
+        obj.width = prop.payload.width;
+        obj.workspace = prop.payload.workspace;
+        obj.zIndex = prop.payload.zIndex;
       }
     },
     toggleBigById(state: InitialState, prop) {
@@ -68,7 +68,7 @@ const counterSlice = createSlice({
         obj.big = obj.big ? 0 : 1;
       }
     },
-    add(state: InitialState, prop) {
+    add(state: InitialState, prop: { payload: IAppContainer; type: string }) {
       const obj = state.appContainer.find(
         (item) => item.id === prop.payload.id && prop.payload.workspace === item.workspace
       );

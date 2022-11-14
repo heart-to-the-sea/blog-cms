@@ -37,7 +37,7 @@ export default function AppContain(props: Props) {
       <div className="top-bar" ref={appContainTopBar}>
         <TopBarRight id={props.id} key={props.id} workspace={props.workspaceId}/>
       </div>
-      {"contain-" + props.workspaceId +'-'+ props.id}
+      {/* {"contain-" + props.workspaceId +'-'+ props.id} */}
       <div className="contain-main" id={"contain-" + props.workspaceId +'-'+ props.id}>
         {props.children}
       </div>

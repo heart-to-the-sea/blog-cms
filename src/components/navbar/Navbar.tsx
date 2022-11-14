@@ -20,7 +20,7 @@ export default function Navbar() {
       add({
         workspace: workspaceIndex,
         id: i,
-        big: 0,
+        big: 1,
         zIndex: 1
       })
     );

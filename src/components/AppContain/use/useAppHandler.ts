@@ -78,7 +78,4 @@ export default function useAppHandler(appContainTopBar: RefObject<HTMLDivElement
     top,
   };
 }
-function falseAlfFlag(): any {
-  throw new Error("Function not implemented.");
-}
 
