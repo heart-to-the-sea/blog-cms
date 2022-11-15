@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { RootState } from "..";
 export interface IAppContainer {
   workspace: string;
+  appName?: string;
   big: 0 | 1;
   id: string | number;
 }

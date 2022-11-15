@@ -15,6 +15,9 @@
   background-color: #853b75;
   position: relative;
   cursor: move;
+  color: #fff;
+  text-align: center;
+  user-select: none;
 }
 .app-contain-big {
   width: 100% !important;

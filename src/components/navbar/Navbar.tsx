@@ -19,6 +19,7 @@ export default function Navbar() {
     dispatch(
       add({
         workspace: workspaceIndex,
+        appName: 'name+' + i,
         id: i,
         big: 0,
       })

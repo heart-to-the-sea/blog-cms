@@ -22,13 +22,13 @@ export default function AppContain(props: Props) {
       ref={container}
     >
       <div className="top-bar" ref={appContainTopBar}>
+        {props.appObj.appName}
         <TopBarRight id={props.id} key={props.id} />
       </div>
-      {"contain-" + props.workspaceId +'-'+ props.id}
-      <div className="contain-main" id={"contain-" + props.workspaceId +'-'+ props.id}>
+      <div className="contain-main" id={"contain-" + props.workspaceId + "-" + props.id}>
         {props.children}
       </div>
-      {altFlag ? "" : <div className="main-icon">文件缩略图</div>}
+      {altFlag ? "" : <div className="main-icon">{props.appObj.appName || "-"}</div>}
     </div>
   );
 }
