@@ -21,7 +21,8 @@ export default function Navbar() {
         workspace: workspaceIndex,
         appName: 'name+' + i,
         id: i,
-        big: 0,
+        big: 1,
+        zIndex: 1
       })
     );
     setTimeout(() => {
@@ -40,16 +41,10 @@ export default function Navbar() {
     <div id="list-center" style={{ bottom: !alfFlag ? "" : "-50px" }}>
       <HashRouter>
         <div id="list">
-          <Link to="/app-react-0-0" onClick={handleOpen(0)}>
+          <Link to={`/app-react-${workspaceIndex}-0`} onClick={handleOpen(0)}>
             <div className="node"></div>
           </Link>
-          <Link to="/app-react-0-1" onClick={handleOpen(1)}>
-            <div className="node"></div>
-          </Link>
-          <Link to="/app-react-1-0" onClick={handleOpen(0)}>
-            <div className="node"></div>
-          </Link>
-          <Link to="/app-react-1-1" onClick={handleOpen(1)}>
+          <Link to={`/app-react-${workspaceIndex}-1`} onClick={handleOpen(1)}>
             <div className="node"></div>
           </Link>
           <div className="node node-more" onClick={handleMore}>
