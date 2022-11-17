@@ -21,7 +21,8 @@ export default function Navbar() {
         workspace: workspaceIndex,
         appName: 'name+' + i,
         id: i,
-        big: 1,
+        big: 0,
+        showTop: 1,
         zIndex: 1
       })
     );

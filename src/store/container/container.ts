@@ -3,6 +3,7 @@ export interface IAppContainer {
   workspace: string | number;
   appName?: string;
   big: 0 | 1;
+  showTop?: 0|1;
   // 唯一标识
   id: string | number;
   width?: string;
