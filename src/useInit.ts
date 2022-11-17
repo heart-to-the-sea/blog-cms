@@ -14,6 +14,7 @@ export default function useInit() {
           workspace: 0,
           id: -1,
           big: 1,
+          showTop: 0,
           zIndex: 1,
         })
       );

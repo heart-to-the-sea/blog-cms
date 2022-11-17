@@ -38,9 +38,9 @@ function App() {
     <div className="base-desktop">
       <TopBar />
       <Workspace>
-        <WorkspaceDesktop workspaceId={0} />
-        <WorkspaceDesktop workspaceId={1} />
-        <WorkspaceDesktop workspaceId={2} />
+        <WorkspaceDesktop workspaceId = {0} />
+        <WorkspaceDesktop workspaceId = {1} />
+        <WorkspaceDesktop workspaceId = {2} />
       </Workspace>
       <Navbar />
     </div>

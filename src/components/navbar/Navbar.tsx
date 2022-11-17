@@ -19,8 +19,10 @@ export default function Navbar() {
     dispatch(
       add({
         workspace: workspaceIndex,
+        appName: 'name+' + i,
         id: i,
-        big: 1,
+        big: 0,
+        showTop: 1,
         zIndex: 1
       })
     );

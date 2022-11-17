@@ -1,10 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { RootState } from "..";
 export interface IAppContainer {
-  // 工作区
   workspace: string | number;
-  // 是否最大化
+  appName?: string;
   big: 0 | 1;
+  showTop?: 0|1;
   // 唯一标识
   id: string | number;
   width?: string;
