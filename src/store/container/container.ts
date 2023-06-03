@@ -1,14 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 export interface IAppContainer {
-  workspace: string | number;
-  appName?: string;
-  big: 0 | 1;
-  showTop?: 0|1;
-  // 唯一标识
-  id: string | number;
-  width?: string;
-  height?: string;
-  zIndex: 1;
+  workspace: string | number; //  工作区
+  appName?: string; //            app名称
+  big: 0 | 1; //                  是否最大化
+  showTop?: 0 | 1; //             是否显示在第一层
+  id: string | number; //         唯一标识
+  width?: string; //              窗口宽度
+  height?: string; //             窗口高度
+  zIndex: 1; //                   窗口层级
 }
 interface InitialState {
   appContainer: IAppContainer[];
@@ -16,10 +15,16 @@ interface InitialState {
 const initialState: InitialState = {
   appContainer: [],
 };
+
 const counterSlice = createSlice({
   name: "container",
   initialState,
   reducers: {
+    /**
+     * 根据id删除窗口
+     * @param state // 状态
+     * @param prop  // 参数
+     */
     removeById(state: InitialState, prop) {
       const index = state.appContainer.findIndex(
         (item) => item.id === prop.payload.id && item.workspace === prop.payload.workspace
@@ -29,6 +34,11 @@ const counterSlice = createSlice({
         state.appContainer.splice(index, 1);
       }
     },
+    /**
+     * 根据id最大化窗口
+     * @param state 
+     * @param prop 
+     */
     big1ById(state: InitialState, prop) {
       const obj = state.appContainer.find(
         (item) => item.id === prop.payload.id && item.workspace === prop.payload.workspace
@@ -37,6 +47,11 @@ const counterSlice = createSlice({
         obj.big = 1;
       }
     },
+    /**
+     * 根据id取消最大化
+     * @param state 
+     * @param prop 
+     */
     big0ById(state: InitialState, prop) {
       const obj = state.appContainer.find(
         (item) => item.id === prop.payload.id && item.workspace === prop.payload.workspace
@@ -45,6 +60,11 @@ const counterSlice = createSlice({
         obj.big = 1;
       }
     },
+    /**
+     * 根据id和工作区id设置窗口对象
+     * @param state 
+     * @param prop 
+     */
     setObjByIdAndWorkspaceId(state: InitialState, prop) {
       const obj = state.appContainer.find(
         (item) => item.id === prop.payload.id && item.workspace === prop.payload.workspace
@@ -58,6 +78,11 @@ const counterSlice = createSlice({
         obj.zIndex = prop.payload.zIndex;
       }
     },
+    /**
+     * 根据id切换最大化窗口
+     * @param state 
+     * @param prop 
+     */
     toggleBigById(state: InitialState, prop) {
       console.log(prop);
       const obj = state.appContainer.find(
@@ -67,6 +92,11 @@ const counterSlice = createSlice({
         obj.big = obj.big ? 0 : 1;
       }
     },
+    /**
+     * 添加一个app对象
+     * @param state 
+     * @param prop 
+     */
     add(state: InitialState, prop: { payload: IAppContainer; type: string }) {
       const obj = state.appContainer.find(
         (item) => item.id === prop.payload.id && prop.payload.workspace === item.workspace
