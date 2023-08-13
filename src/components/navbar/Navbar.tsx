@@ -30,7 +30,7 @@ export default function Navbar() {
       registerMicroApps([
         {
           name: "wecome-" + workspaceIndex+ '-' +i,
-          entry: "//localhost:5500",
+          entry: "http://www.baidu.com",
           container: "#contain-" + workspaceIndex +'-'+i,
           activeRule: "#/app-react-"+ workspaceIndex +'-'+ i,
         },
